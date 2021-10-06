@@ -32,6 +32,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.register(nib, forCellReuseIdentifier: "Cell")
         
         
+
+        
         // Do any additional setup after loading the view.
     }
     

@@ -37,10 +37,10 @@ class PostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -53,28 +53,12 @@ class PostTableViewCell: UITableViewCell {
         
         self.captionLabel.text = "\(postData.name!): \(postData.caption!)"
         
-        if postData.comment != nil {
-            
-            self.commentLabel.text = "\(postData.comment!)"
-        } else {
-            
-            self.commentLabel.text = ""
-        }
         
         
-        if postData.commentName != nil {
-            
-
-            self.commentNameLabel.text = "\(postData.commentName!)"
-        } else {
-            
-            self.commentNameLabel.text = ""
-        }
-        
-       
+        self.commentLabel.text = "\(postData.comment) "
         
         
-       
+        
         
         self.dateLabel.text = ""
         
@@ -88,7 +72,7 @@ class PostTableViewCell: UITableViewCell {
             self.dateLabel.text = dateString
             
             
-          
+            
             
         }
         
