@@ -47,16 +47,23 @@ class CommentViewController: UIViewController {
     @IBAction func comment(_ sender: Any) {
         
         
-        let user = Auth.auth().currentUser
+        let user = Auth.auth().currentUser!
         var updateValue: FieldValue
-        updateValue = FieldValue.arrayUnion([commentTextField.text!])
+        
+        let displayesComment = "\(user.displayName!)" + ":" + "\(commentTextField.text!)"
+        
+        updateValue = FieldValue.arrayUnion([displayesComment])
+        
+        print("デバック：\(displayesComment)")
+        
         let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
         
-        postRef.updateData(["comment": updateValue])
         
-        postRef.updateData(["commentName":user!.displayName])
        
-      
+        
+        postRef.updateData(["comment":updateValue])
+        
+
         
         
         

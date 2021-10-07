@@ -33,6 +33,8 @@ class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var commentLabel: UILabel!
     
+ 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -54,8 +56,26 @@ class PostTableViewCell: UITableViewCell {
         self.captionLabel.text = "\(postData.name!): \(postData.caption!)"
         
         
+       
+       
+        var countNumber = 0
         
-        self.commentLabel.text = "\(postData.comment) "
+        var allComment = ""
+        
+        print("コメントの数:\(postData.comment.count)")
+        
+        while countNumber < postData.comment.count {
+            allComment += "\(postData.comment[countNumber])\n"
+            
+            countNumber += 1
+            
+        
+            
+        }
+        
+        
+        
+        self.commentLabel.text = "\(allComment)"
         
         
         

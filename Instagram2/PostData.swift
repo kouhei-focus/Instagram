@@ -44,17 +44,15 @@ class PostData:NSObject {
         
         
         
+        
+        
         if let comment = postDic["comment"] as? [String] {
             self.comment = comment
             
         }
         
         
-        if let commentName = postDic["commentName"] as? [String] {
-            self.commentName = commentName
-            
-        }
-        
+       
       
         
         if let myid = Auth.auth().currentUser?.uid {
